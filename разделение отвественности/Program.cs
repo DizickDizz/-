@@ -1,19 +1,20 @@
-﻿namespace разделение_отвественности
+﻿using System.Reflection.PortableExecutable;
+
+namespace разделение_отвественности
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
-            Reader reader = new();
-            Repository repository = new();
-            Writer writer = new();
-            
-            Compiler compiler = new(reader,repository,writer);
+            Start();
+        }
 
-            while (true)
-            {
-                compiler.Compile();
+        private static void Start()
+        {
+            Reader Reader = new();
+            while(true)    
+            { 
+                Reader.Read();
             }
         }
     }

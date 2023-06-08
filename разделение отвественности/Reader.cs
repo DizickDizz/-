@@ -8,11 +8,15 @@ namespace разделение_отвественности
 {
     public class Reader
     {
-
-        public string Read()
+        private readonly Repository _repository;
+        public Reader()
+        {
+            _repository = new();
+        }
+        public void Read()
         {
             Console.WriteLine("Введите сообщение");
-            return Console.ReadLine();
+            _repository.Comparssion(Console.ReadLine());
         }
     }
 }

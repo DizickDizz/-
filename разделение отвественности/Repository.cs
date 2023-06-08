@@ -8,16 +8,25 @@ namespace разделение_отвественности
 {
     public class Repository
     {
+        private readonly Writer _writer;
+        public string answer;
 
-        public string Comparssion(string message)
+        public Repository()
         {
+            _writer = new();
+        }
+        public void Comparssion(string message)
+        {
+
             if (message == "Сколько времени?")
-                return "20:40";
-            if (message == "Какая погода в Москве?")
-                return "Хорошая";
-            if (message == "Какой курс доллара?")
-                return "30";
-            return "";
+                answer = "20:40";
+            else if (message == "Какая погода в Москве?")
+                answer = "Хорошая";
+            else if (message == "Какой курс доллара?")
+                answer = "30";
+            else answer =  "";
+
+            _writer.Write(answer);
         }
     }
 }

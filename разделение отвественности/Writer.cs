@@ -8,7 +8,6 @@ namespace разделение_отвественности
 {
     public class Writer
     {
-
         public void Write(string message) 
         {
             if (message != String.Empty)
